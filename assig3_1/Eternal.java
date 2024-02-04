@@ -72,9 +72,6 @@ public class Eternal {
 						
 						catch(InterruptedException e) {}
 						
-						// Set state2 to ensure thread 1 will run next
-						
-						
 						// Example C code block
 						String message = "I am thread 3";
 						System.out.println(message);

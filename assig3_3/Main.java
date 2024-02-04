@@ -2,6 +2,9 @@ package assig3_3;
 
 import java.util.Scanner;
 
+//Ron Bitan (315924316) && Noam Muchink (212472484)
+//Github: https://github.com/Subsidy2032/Work3
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -10,15 +13,18 @@ public class Main {
 		final int numOfSaladsToPrepare = scan.nextInt();
 		System.out.println("Preparing " + numOfSaladsToPrepare + " Salads...");
 
+		// Initiates objects required to operate the machine
 		SlicerMachine machine = new SlicerMachine(numOfSaladsToPrepare);
 		CucumbersThread cucumber = new CucumbersThread(machine);
 		TomatoesThread tomato = new TomatoesThread(machine);
 		SlicerThread slicer = new SlicerThread(machine);
 		
+		// Starts the threads
 		cucumber.start();
 		tomato.start();
 		slicer.start();
 		
+		// Makes sure the threads are running before the main thread
 		try {
 			cucumber.join();
 		}
