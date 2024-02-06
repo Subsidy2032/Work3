@@ -30,12 +30,14 @@ public class Gamer extends Thread {
 	 */
 	public void play() {
 		while(game.getNumOfRounds() < 10) {
-			if(game.getNumOfRounds() < 10) {
-				int headsOrTails = game.flipCoin();
-				
-				// Checks if the Gamer got heads and increments the number of wins if they did
-				if(headsOrTails == 1)
-					goodFlipsCounter++;
+			synchronized(game) {
+				if(game.getNumOfRounds() < 10) {
+					int headsOrTails = game.flipCoin();
+					
+					// Checks if the Gamer got heads and increments the number of wins if they did
+					if(headsOrTails == 1)
+						goodFlipsCounter++;
+				}
 			}
 			
 			try {

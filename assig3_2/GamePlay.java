@@ -33,7 +33,7 @@ public class GamePlay {
 	 * Flips the coin and returns heads or tails
 	 * @return 1 if heads, 0 if tails
 	 */
-	public synchronized int flipCoin() {
+	public int flipCoin() {
 		try {
 			// Wait for the coin to be available
 			while(!coin_available_) {
